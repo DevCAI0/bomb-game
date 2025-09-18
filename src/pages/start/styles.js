@@ -4,7 +4,7 @@ import { getStatusBarHeight } from "react-native-iphone-x-helper";
 
 export const Container = styled.View`
   flex: 1;
-  padding-top: ${getStatusBarHeight() + RFValue(50)}px;
+  padding-top: ${getStatusBarHeight() + RFValue(20)}px;
   background-color: #131313;
 `;
 
@@ -18,6 +18,7 @@ export const Title = styled.Text`
   margin-top: ${RFValue(70)}px;
   margin-bottom: ${RFValue(110)}px;
   font-size: ${RFValue(32)}px;
+  font-weight: bold;
   font-family: sans-serif;
   text-align: center;
   color: white;
@@ -30,8 +31,12 @@ export const SubTitle = styled.Text`
   color: white;
 `;
 
-export const Rules = styled.Text`
+export const RulesButton = styled.TouchableOpacity`
   margin-top: ${RFValue(80)}px;
+  align-items: center;
+`;
+
+export const RulesText = styled.Text`
   font-size: ${RFValue(16)}px;
   font-family: sans-serif;
   text-align: center;

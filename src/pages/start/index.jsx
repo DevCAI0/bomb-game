@@ -1,17 +1,28 @@
 import React from "react";
-import { Container, Logo, Rules, SubTitle, Title } from "./styles";
+import {
+  Container,
+  Logo,
+  RulesButton,
+  RulesText,
+  SubTitle,
+  Title,
+} from "./styles"; // Importe os componentes corretos
 import ButtonComponent from "../../components/Buttons";
+import { useNavigation } from "@react-navigation/native";
 
 export default function Start() {
+  const navigation = useNavigation();
   const handleNavToPlayAlone = () => {
-    console.log("Teste");
+    navigation.navigate("PlayAlone");
   };
   const handleNavToPlayTogether = () => {
     console.log("Teste");
   };
-  const handleNavToPlayRules  = () => {
-    console.log("Teste");
+
+  const handleNavToRules = () => {
+    navigation.navigate("Rules");
   };
+
   return (
     <Container>
       <Logo
@@ -28,7 +39,10 @@ export default function Start() {
         buttonText={"jogar em Dupla"}
         handlePress={handleNavToPlayTogether}
       />
-      <Rules onPress={handleNavToPlayRules}>ver as regras do jogo</Rules>
+
+      <RulesButton onPress={handleNavToRules}>
+        <RulesText>ver as regras do jogo</RulesText>
+      </RulesButton>
     </Container>
   );
 }
